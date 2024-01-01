@@ -14,16 +14,17 @@ if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64") # for desktop
 else(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64") # for tx2
   set(architecture "arm64")
 endif()
-if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+if(WIN32)
     set(OS_NAME "windows")
-elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+elseif(UNIX)
     set(OS_NAME "linux")
-elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+elseif(APPLE)
     set(OS_NAME "macos")
 endif()
-set(ZIP_URL "https://github.com/webui-dev/webui/releases/download/nightly/${NameFolder}-${compiler}-${architecture}.zip")
-
 set(NameFolder webui-${OS_NAME})
+set(ZIP_URL https://github.com/webui-dev/webui/releases/download/nightly/${NameFolder}-${compiler}-${architecture}.zip)
+
+
 # Specify the directory to download the zip archive
 set(DOWNLOAD_DIR ${CMAKE_CURRENT_BINARY_DIR}/downloads)
 
