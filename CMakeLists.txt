@@ -45,7 +45,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 
             # Define the external project to download the zip archive
             ExternalProject_Add(
-                webui-linux
+                webui-macos
                 URL ${ZIP_URL}
                 DOWNLOAD_DIR ${DOWNLOAD_DIR}
                 DOWNLOAD_NAME "webui-macos-clang-x64.zip"
