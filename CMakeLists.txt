@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.18)
 project(WebUI)
 include(ExternalProject)
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-    if(Linux)
+    if(UNIX AND NOT APPLE)
         if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64") # for desktop
             set(ZIP_URL "https://github.com/webui-dev/webui/releases/download/nightly/webui-linux-clang-x64.zip")
             
@@ -32,7 +32,8 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
         else()
             message(FATAL_ERROR "Unknown System Architecture: ${CMAKE_SYSTEM_PROCESSOR}")
         endif()
-    elseif(Apple)
+    elseif(APPLE)
+        message("APPLE")
         if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64") # for desktop
             set(ZIP_URL "https://github.com/webui-dev/webui/releases/download/nightly/webui-macos-clang-x64.zip")
             
