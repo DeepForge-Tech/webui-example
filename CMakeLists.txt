@@ -47,6 +47,6 @@ ExternalProject_Add(
 link_directories(${CMAKE_SOURCE_DIR}/src/${NameFolder}/)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/src/${NameFolder}/include)
 add_executable(WebUI main.cpp)
 target_link_libraries(WebUI webui-2-static)
