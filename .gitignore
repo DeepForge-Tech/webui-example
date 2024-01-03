@@ -116,3 +116,4 @@ examples/**/text-editor/text-editor
 # Compressed
 *.zip
 *.gz
+build/
